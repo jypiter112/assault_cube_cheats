@@ -2,6 +2,16 @@
 #include <TlHelp32.h>
 #include <stdio.h>
 
+DWORD modbase;
+DWORD pid;
+DWORD hp_offset;
+
+// offsets
+DWORD plr_offset = 0x17E0A8;
+DWORD hp_offset = 0xEC;
+
+// Offset "ac_client.exe" + 0x17E0A8
+
 DWORD GetProcId(char* name) {
     PROCESSENTRY32 pe;
     pe.dwSize = sizeof(PROCESSENTRY32);
